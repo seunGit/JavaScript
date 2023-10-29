@@ -3,7 +3,6 @@ function deepCopyAll(value) {
         // Map 깊은복사..........
         if (value instanceof Map){
             const map2 = new Map();
-            // << 틀린부분 >> forEach => key, value로 하니까 오류남.
             value.forEach((value, key) => {
                 map2.set(key, deepCopyAll(value));
             });
@@ -27,6 +26,14 @@ function deepCopyAll(value) {
                 arr.push(deepCopyAll(value));
             });
             return arr;
+        }
+        // RegExp(정규표현식) 깊은복사
+        if (value instanceof RegExp) {
+            return new RegExp(value);
+        }
+        // Date 깊은복사
+        if (value instanceof Date) {
+            return new Date(value);
         }
 
         // Obj 깊은복사
