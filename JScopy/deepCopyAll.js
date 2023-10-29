@@ -1,5 +1,15 @@
 function deepCopyAll(value) {
+    // Map 깊은복사..........
     if (typeof value === 'object' && value !== null) {
+        if (value instanceof Map){
+            const map2 = new Map();
+            // << 틀린부분 >> forEach => key, value로 하니까 오류남.
+            value.forEach((value, key) => {
+                map2.set(key, deepCopyAll(value));
+            });
+            return map2;
+        }
+        
         const result = {};
         // obj내의 프로퍼티를 찾는다.
         for (var prop in value) {
@@ -11,8 +21,9 @@ function deepCopyAll(value) {
         // result를 반환
         return result;
     }
+    
     return value;
-}
+}   
 
 // deepCopyAll 함수 추가.
 // 사용안하면 "TypeError: deepCopyAll is not a function" 에러발생
