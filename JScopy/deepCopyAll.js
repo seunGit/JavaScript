@@ -10,6 +10,15 @@ function deepCopyAll(value) {
             return map2;
         }
         
+        if (value instanceof Set) {
+            // Set 자료구조 생성
+            const sets = new Set();
+            value.forEach((value) => {
+                sets.add(deepCopyAll(value));
+            });
+            return sets;
+        }
+        
         const result = {};
         // obj내의 프로퍼티를 찾는다.
         for (var prop in value) {
