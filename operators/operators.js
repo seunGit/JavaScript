@@ -217,12 +217,12 @@ console.log(10 ** 3);
 let name;
 console.log(name);
 
-name = name ?? '코드팩토리';
+name = name ?? 'Min';
 console.log(name);
 
 name = name ?? '아이브';
 console.log(name);
 
 let name2;
-name2 ??= '코드팩토리';
+name2 ??= 'Seungit';
 console.log(name2);

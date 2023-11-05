@@ -12,23 +12,33 @@ test('deepCopyAll testing', () => {
         };
 
     const obj2 = deepCopyAll(obj);
-    
+
     // Obj
     expect(obj2.a).toStrictEqual(obj.a);
+    expect(obj2.a).toBe(obj.a);
     expect(obj2.b).toStrictEqual(obj.b);
     expect(obj2.b.c).toStrictEqual(obj.b.c);
+    expect(obj2.b.c).toBe(obj.b.c);
+
     // Map
     expect(obj2.map).toStrictEqual(obj.map);
     expect(obj2.map[1]).toStrictEqual(obj.map[1]);
+    expect(obj2.map[1]).toBe(obj.map[1]);
+
     // Set
     expect(obj2.set).toStrictEqual(obj.set);
     expect(obj2.set[1]).toStrictEqual(obj.set[1]);
+    expect(obj2.set[1]).toBe(obj.set[1]);
+
     // Array
     expect(obj2.arr).toStrictEqual(obj.arr);
     expect(obj2.arr[3]).toStrictEqual(obj.arr[3]);
     expect(obj2.arr[3][1]).toStrictEqual(obj.arr[3][1]);
+    expect(obj2.arr[3][1]).toBe(obj.arr[3][1]);
     // RegExp
     expect(obj2.regexp).toStrictEqual(obj.regexp);
+    expect(obj2.regexp).toEqual(obj.regexp);
+    expect(obj2.regexp).toBe(obj.regexp);
     // Date
     expect(obj2.date).toStrictEqual(obj.date);
 });

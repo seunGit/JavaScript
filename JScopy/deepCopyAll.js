@@ -52,6 +52,21 @@ function deepCopyAll(value) {
     return value;
 };
 
+const obj = {
+    a: 1, b: {c: 2},
+    map: new Map([['one',1], ['two',2]]),
+    set: new Set([1, "A", true]),
+    arr: [1, 2, 3, [4, 5, [6, 7]]],
+    regexp: /^(?:\d{3}|\(\d{3}\))([-\/\.])\d{4}\1\d{4}$/,
+    date: new Date('October 29, 2023')
+   };
+
+const obj2 = deepCopyAll(obj);
+
+obj.regexp = /^(?:\d{3}|\(\d{3}\))([-\/\.])\d{4}\1\d{5}$/;
+console.log(obj.regexp);
+console.log(obj2.regexp);
+
 // deepCopyAll 함수 추가.
 // 사용안하면 "TypeError: deepCopyAll is not a function" 에러발생
 module.exports = deepCopyAll;
