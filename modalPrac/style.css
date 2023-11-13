@@ -1,0 +1,49 @@
+/* 초기화 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HTML 및 body의 스타일 */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 로그인 버튼(.login)의 스타일 */
+.login {
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 1em;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+/* 모달을 감싸는 컨테이너(.container)의 스타일 */
+.container {
+    top: 0;
+    left: 0;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    display: none; /* 초기에는 숨김 상태 */
+    background-color : rgba(0,0,0,0.2); /* 배경 회색 및 투명도 설정 */
+    z-index : 100; /* 다른 요소들보다 위에 위치하도록 설정 */
+}
+
+/* 모달 내용(.modal)의 스타일 */
+.modal {
+    background-color: beige; /* 모달 배경 색상 설정 */
+    padding: 50px; /* 모달 내용 안의 여백 설정 */
+}

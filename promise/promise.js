@@ -45,17 +45,17 @@ function delay(ms) {
     return new Promise((resolve, reject) => {
         setTimeout(resolve, ms);
     });
-}
+};
 
 async function americano() {
     await delay(2000);
     return "아메리카노"
-}
+};
 
 async function cappuccino() {
     await delay(1000);
     return "카푸치노"
-}
+};
 
 // 길어진다면 promise hell 이 될 것이다.
 // function allCoffee() {
@@ -75,13 +75,13 @@ async function cappuccino() {
 async function allCoffee() {
     return Promise.all([americano(), cappuccino()])
         .then(coffee => coffee.join('와 '));
-}
+};
 
 // 먼저 만들어진 커피를 출력하고 싶을때
 function firstCoffee() {
-    return Promise.race([americano(), cappuccino()])
-}
+    return Promise.race([americano(), cappuccino()]);
+};
 
-console.log("커피를 만듭니다.")
+console.log("커피를 만듭니다.");
 allCoffee().then(console.log);
 firstCoffee().then(console.log);

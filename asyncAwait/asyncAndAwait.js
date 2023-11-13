@@ -16,8 +16,9 @@ function userName(name) {
 }
 
 async function sayName() {
+    // await 키워드를 사용하여 promise가 처리될때까지 기다림.
     const result = await userName("seungit");
     console.log(result)
 }
-console.log("너의 이름은?");
-sayName();
+console.log("너의 이름은?");    // 동기적인 코드
+sayName();  // 비동기 함수 호출, 1초 뒤 출력
