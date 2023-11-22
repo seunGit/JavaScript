@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 레이아웃 연습장</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            background: blueviolet;
+        }
+
+        .inner {
+            width: 1200px;
+            margin: auto;
+            height: 1080px;
+            background-color: green;
+        }
+
+        header {
+            height: 201px;
+            background: red;
+        }
+
+        .menu {
+            background-color: tomato;
+            height: 100px;
+        }
+
+        .contents:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .side {
+            float: right;
+            background: yellow;
+            width: 100px;
+            height: 679px;
+        }
+        .contents .con1 {
+            float: right;
+            background: #d7d5ff;
+            height: 339px;
+            width: 1100px;
+            border: 4px solid black;
+        }
+
+        .contents .con2 {
+            float: right;
+            background: turquoise;
+            height: 339px;
+            width: 1100px;
+            border: 4px solid black;
+        }
+
+        footer {
+            background-color: orange;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="inner">
+            <header>HEADER</header>
+            <aside class="menu">Menu</aside>
+            <aside class="side">Aside</aside>
+            <div class="contents">
+                <article class="con1">Content1</article>
+                <footer class="con2">Content2</footer>
+            </div>
+            <footer>Footer</footer>
+        </div>
+    </div>
+</body>
+
+</html>

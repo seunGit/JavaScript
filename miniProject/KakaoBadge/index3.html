@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: blueviolet;
+            font-size: 50px;
+        }
+
+        .inner {
+            display: flex;
+            flex-direction: column;
+            width: 1200px;
+            height: 1080px;
+            background-color: green;
+        }
+
+        header {
+            height: 201px;
+            background: red;
+        }
+
+        .contents {
+            display: flex;
+        }
+
+        .side {
+            background: yellow;
+            width: 338px;
+            height: 679px;
+
+        }
+
+        .con {
+            border: 1px;
+            display: flex;
+            justify-content: center; /* 가로축 정렬 */
+            align-items: center; /* 세로축 정렬 */
+            flex-direction: column; /* 자식 요소들을 세로방향으로 배치, row는 기본값 */
+            background: gold;
+            flex: 1;
+        }
+
+        .item {
+            width:100px;
+            height: 100px;
+            background-color: blue;
+            border: 1px solid;
+            border-radius: 20px;
+            margin: 10px;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            color: white;
+        }
+
+        footer {
+            background: tomato;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="inner">
+            <header>HEADER</header>
+            <div class="contents">
+                <aside class="side">ASIDE</aside>
+                <article class="con"> CONTENTS
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                </article>
+
+            </div>
+            <footer>FOOTER</footer>
+        </div>
+    </div>
+</body>
+
+</html>
